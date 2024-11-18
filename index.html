@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gift Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <nav>
+    <div class="navTop">
+      <div class="shopLocation">
+        <span>📍 Store Location</span>
+      </div>
+      <div class="shopName">
+        <h1>Bulaklak Ave.</h1>
+      </div>
+      <div class="navRight">
+        <button class="searchBtn">🔍</button>
+        <!-- Login button to show the form -->
+        <button id="login-btn" class="loginBtn">Login</button>
+        <button class="cartBtn">🛒</button>
+      </div>
+    </div>
+    <div class="navBottom">
+      <ul class="menuList">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#category">Category</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#popular">Popular <sup>Hot Offers</sup></a></li>
+        <li><a href="#recent">Recent</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Login Form Container -->
+<div id="login-form-container" style="display: none;">
+  <form id="login-form" method="POST" action="login.php">
+    <h2>Login</h2>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+    <p>Don't have an account? <a href="javascript:void(0);" id="register-form-link">Register</a></p>
+  </form>
+
+  <!-- Register Form (Initially Hidden) -->
+  <form id="register-form" method="POST" action="register.php" style="display: none;">
+    <h2>Register</h2>
+    <label for="full-name">Full Name:</label>
+    <input type="text" id="full-name" name="name" required>
+
+    <label for="register-email">Email:</label>
+    <input type="email" id="register-email" name="email" required>
+
+    <label for="register-password">Password:</label>
+    <input type="password" id="register-password" name="password" required>
+
+    <label for="register-confirm-password">Confirm Password:</label>
+    <input type="password" id="register-confirm-password" name="confirm-password" required>
+
+    <button type="submit">Register</button>
+
+    <p>Already have an account? <a href="javascript:void(0);" id="login-form-link">Login</a></p>
+  </form>
+
+  <!-- Close Button -->
+  <span id="close-login-form">&times;</span>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="collection-label">C O L L E C T I O N</span>
+    <h2>Various<br>Collection of<br>Gifts or Souvenirs</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.<br>Consequatur provident saepe quia incidunt iusto fugit</p>
+    <button class="shop-now">Shop Now</button>
+  </div>
+  <div class="hero-image">
+    <img src="Home.jpg" alt="Home">
+  </div>
+</section>
+
+<!-- Category Section -->
+<section id="category">
+  <div class="category-container">
+    <div class="category-item">
+      <div class="category-icon">
+        <img src="annual-flower.png" alt="Annual Flower">
+      </div>
+      <span>Annual Flower</span>
+    </div>
+    <div class="category-item">
+      <div class="category-icon">
+        <img src="perennial-flower.png" alt="Perennial Flower">
+      </div>
+      <span>Perennial Flower</span>
+    </div>
+    <div class="category-item">
+      <div class="category-icon">
+        <img src="biennial-flower.png" alt="Biennial Flower">
+      </div>
+      <span>Biennial Flower</span>
+    </div>
+    <div class="category-item">
+      <div class="category-icon">
+        <img src="rose-flower.png" alt="Rose Flower">
+      </div>
+      <span>Rose Flower</span>
+    </div>
+    <div class="category-item">
+      <div class="category-icon">
+        <img src="sunflower.png" alt="Sunflower">
+      </div>
+      <span>Sunflower</span>
+    </div>
+    <div class="category-item">
+      <div class="category-icon">
+        <img src="hydrangea.png" alt="Hydrangea">
+      </div>
+      <span>Hydrangea</span>
+    </div>
+    <!-- Move the 'Show More' link inside the category-container -->
+    <a href="category.html" class="show-more">Show More <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- Popular Section -->
+<section id="popular">
+  <h2>Popular Gifts/Souvenirs</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <span class="new-tag">New</span>
+      <img src="flower-pot-1.png" alt="Orange Flower Pot">
+      <h3>Flower Pot</h3>
+      <div class="price">
+        <span class="current-price">20$</span>
+        <span class="original-price">40$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <span class="new-tag">New</span>
+      <img src="flower-pot-2.png" alt="Purple Flower Pot">
+      <h3>Flower Pot</h3>
+      <div class="price">
+        <span class="current-price">20$</span>
+        <span class="original-price">40$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <span class="new-tag">New</span>
+      <img src="flower-pot-3.png" alt="Yellow Flower Pot">
+      <h3>Flower Pot</h3>
+      <div class="price">
+        <span class="current-price">20$</span>
+        <span class="original-price">40$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    <div class="christmas-collection">
+      <h3>Christmas Edition<br>Collection</h3>
+      <button class="shop-now">Shop Now</button>
+      <img src="christmas-collection.png" alt="Christmas Collection">
+    </div>
+  </div>
+  <a href="popular.html" class="show-more">Show More <span class="arrow">→</span></a>
+</section>
+
+<!-- Shop Section -->
+<section id="shop">
+  <h2>Shop</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <img src="flower-pot-1.png" alt="Orange Flower Pot">
+      <h3>Flower Pot</h3>
+      <div class="price">
+        <span class="current-price">20$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="flower-pot-2.png" alt="Purple Flower Pot">
+      <h3>Flower Pot</h3>
+      <div class="price">
+        <span class="current-price">20$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="flower-pot-3.png" alt="Yellow Flower Pot">
+      <h3>Flower Pot</h3>
+      <div class="price">
+        <span class="current-price">20$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+  </div>
+  <a href="shop.html" class="show-more">Show More <span class="arrow">→</span></a>
+</section>
+
+<!-- Recent Section -->
+<section id="recent">
+  <h2>Recent Arrivals</h2>
+  <div class="products-grid">
+    <div class="product-card">
+      <img src="recent-flower-1.png" alt="Recent Flower">
+      <h3>Recent Flower</h3>
+      <div class="price">
+        <span class="current-price">25$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="recent-flower-2.png" alt="Recent Flower">
+      <h3>Recent Flower</h3>
+      <div class="price">
+        <span class="current-price">25$</span>
+      </div>
+      <button class="add-to-cart">Add To Cart</button>
+    </div>
+  </div>
+  <a href="recent.html" class="show-more">Show More <span class="arrow">→</span></a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2024 - Made By Going-To Internet</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

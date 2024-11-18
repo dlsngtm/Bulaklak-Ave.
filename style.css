@@ -1,0 +1,893 @@
+/* style.css */
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* Header container */
+header {
+  background-color: #111;
+  color: white;
+  padding: 10px 50px;
+}
+
+.navTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shopLocation {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.shopName {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shopName h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 38px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white;
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.searchBtn, .loginBtn, .cartBtn {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.searchBtn:hover, .loginBtn:hover, .cartBtn:hover {
+  background-color: #c2185b;
+}
+
+.navBottom {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.menuList {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.menuList li a {
+  color: lightgray;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.menuList li a:hover {
+  color: white;
+}
+
+.menuList li a sup {
+  font-size: 9px;
+  color: #e91e63;
+  vertical-align: super;
+  font-weight: 500;
+  background: #ff6b6b;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navTop {
+    flex-direction: column;
+    align-items: flex-start; /* Stack elements vertically */
+  }
+
+  .navRight {
+    margin-top: 10px;
+    gap: 10px; /* Reduce gap on smaller screens */
+  }
+}
+
+/* General Form Container Styling */
+#login-form-container, #register-form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #f1e6f2; /* Light pink border */
+  padding: 40px 30px;
+  z-index: 1000;
+  display: none;
+  width: 380px; /* Increased width */
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for a floating effect */
+  animation: fadeIn 0.4s ease;
+  background: linear-gradient(135deg, #f9f3f8, #fff); /* Soft pink gradient */
+  transition: all 0.3s ease-in-out; /* Smooth animation for open/close */
+}
+
+/* Form Title Styling */
+#login-form h2, #register-form h2 {
+  text-align: center;
+  color: #333; /* Dark text for contrast */
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif; /* Elegant font */
+}
+
+/* Input Fields */
+#login-form input, #register-form input {
+  padding: 14px;
+  border: 1px solid #f1e6f2; /* Light pink border */
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  width: 100%;
+  color: #333;
+  background-color: #f9f3f8; /* Light pink background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login-form input:focus, #register-form input:focus {
+  border-color: #ff6b6b; /* Soft pink border when focused */
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.3); /* Soft pink glow on focus */
+}
+
+/* Button Styling */
+#login-form button, #register-form button {
+  padding: 14px;
+  background-color: #ff6b6b; /* Soft pink for button */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-bottom: 20px; /* Added space between button and text below */
+}
+
+#login-form button:hover, #register-form button:hover {
+  background-color: #ff4c68; /* Darker pink on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+#login-form button:active, #register-form button:active {
+  background-color: #e14456; /* Even darker shade when clicked */
+}
+
+/* Add Spacing Between Text and Button (e.g., for links like "Forgot Password?") */
+#login-form .text-link, #register-form .text-link {
+  text-align: center;
+  margin-top: 15px; /* Add some margin to the top for spacing */
+  font-size: 14px;
+  color: #ff6b6b;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#login-form .text-link:hover, #register-form .text-link:hover {
+  color: #ff4c68; /* Darker pink on hover for links */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #login-form-container, #register-form-container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  #login-form-container, #register-form-container {
+    width: 95%;
+  }
+}
+
+/* FadeIn Animation for Form */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Overlay for Forms */
+#login-overlay, #register-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  animation: fadeInOverlay 0.3s ease;
+}
+
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Close Button Styling */
+#close-login-form, #close-register-form {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #ff6b6b; /* Soft pink close button */
+  transition: color 0.3s ease;
+}
+
+#close-login-form:hover, #close-register-form:hover {
+  color: #ff4c68; /* Darker pink on hover */
+}
+
+/* Title Styling */
+#login-form h2, #register-form h2 {
+  text-align: center;
+  color: #333; /* Dark text for contrast */
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif; /* Elegant font */
+}
+
+/* Input Fields */
+#login-form input, #register-form input {
+  padding: 14px;
+  border: 1px solid #f1e6f2; /* Light pink border */
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 16px;
+  width: 100%;
+  color: #333;
+  background-color: #f9f3f8; /* Light pink background */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#login-form input:focus, #register-form input:focus {
+  border-color: #ff6b6b; /* Soft pink border when focused */
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.3); /* Soft pink glow on focus */
+}
+
+#login-form label, #register-form label {
+  font-size: 14px;
+  color: #555; /* Soft grey for labels */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+/* Button Styling */
+#login-form button, #register-form button {
+  padding: 14px;
+  background-color: #ff6b6b; /* Soft pink for button */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#login-form button:hover, #register-form button:hover {
+  background-color: #ff4c68; /* Darker pink on hover */
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+#login-form button:active, #register-form button:active {
+  background-color: #e14456; /* Even darker shade when clicked */
+}
+
+/* Error and Success Styles for Input */
+input.error {
+  border-color: #e74c3c; /* Red for error */
+}
+
+input.success {
+  border-color: #2ecc71; /* Green for success */
+}
+
+/* Gift Shop Aesthetic Enhancements */
+#login-form-container::before, #register-form-container::before {
+  content: url('https://example.com/gift-icon.svg'); /* Icon for visual appeal */
+  display: block;
+  margin: 0 auto 20px;
+  width: 50px; /* Small icon above form */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #login-form-container, #register-form-container {
+    width: 85%;
+  }
+}
+
+@media (max-width: 480px) {
+  #login-form-container, #register-form-container {
+    width: 95%;
+  }
+}
+
+/* Form Layout Adjustments */
+#login-form, #register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px; /* Adjust gap between form fields */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+/* Hero Section Styles */
+.hero {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  background-color: #ffe6e6;
+  padding: 0 50px;
+}
+
+.hero-content {
+  flex: 1;
+  padding: 50px 0;
+}
+
+.collection-label {
+  color: #ff6b6b;
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.hero-content h2 {
+  font-size: 52px;
+  color: #333;
+  margin: 20px 0;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.hero-content p {
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.2px;
+}
+
+.shop-now {
+  background-color: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  letter-spacing: 0.5px;
+}
+
+.shop-now:hover {
+  background-color: #ff5252;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Error Message Box Style */
+.error-box {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Error Text Styling */
+.error-text {
+  flex: 1;
+  padding-right: 10px;
+  font-weight: 500;
+}
+
+/* Button Styling */
+.error-ok-btn {
+  background-color: #f5c6cb;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.error-ok-btn:hover {
+  background-color: #e2a1a9;
+  transform: scale(1.05);
+}
+
+.error-ok-btn:active {
+  background-color: #d19499;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Category Section Styles */
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-icon {
+  width: 120px;
+  height: 120px;
+  background-color: #ffe6e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.category-item span {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Popular Section Styles */
+#popular {
+  padding: 50px;
+}
+
+#popular h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #333;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.new-tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff6b6b;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  margin: 0 auto 15px;
+}
+
+.product-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.current-price {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.original-price {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.add-to-cart {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #333;
+}
+
+.christmas-collection {
+  background: #ffe6e6;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.christmas-collection h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.christmas-collection img {
+  width: 60%;
+  height: auto;
+  margin-top: 20px;
+}
+
+/* Shop Section Styles */
+#shop {
+  padding: 50px;
+}
+
+.collection-banner {
+  display: flex;
+  align-items: center;
+  background-color: #fff5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.banner-content {
+  flex: 1;
+  padding: 50px;
+}
+
+.banner-content h2 {
+  font-size: 42px;
+  color: #333;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.banner-content p {
+  color: #666;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.banner-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.banner-image img {
+  max-width: 300px;
+  height: auto;
+}
+
+/* Recent Section Styles */
+
+#recent {
+  padding: 50px;
+}
+
+#recent {
+  background-color: #fff;
+}
+
+#recent h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .section-container {
+    padding: 40px 20px;
+  }
+  
+.products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .collection-banner {
+    flex-direction: column;
+  }
+  
+  .banner-content {
+    text-align: center;
+    padding: 30px;
+  }
+  
+  .banner-content h2 {
+    font-size: 32px;
+  }
+  
+  .banner-image img {
+    max-width: 200px;
+  }
+  
+  #recent .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  #recent .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Position Show More Button on the right */
+.section-container {
+  position: relative; /* This will be the reference for the Show More button */
+}
+
+/* General Show More Button Styling */
+.show-more {
+  position: absolute;
+  right: 20px; /* Position it 20px from the right side of the container */
+  bottom: 10px; /* Position it 10px from the bottom of the container */
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #007BFF;
+  text-decoration: none;
+  background-color: #f1f1f1;
+  border: 2px solid #007BFF;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.show-more .arrow {
+  margin-left: 5px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.show-more:hover {
+  background-color: #007BFF;
+  color: white;
+  border-color: #007BFF;
+  transform: translateX(5px);
+}
+
+.show-more:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Category Section */
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+  position: relative; /* Necessary to position Show More relative to this container */
+}
+
+/* Shop, Popular, and Recent Sections */
+#shop, #popular, #recent {
+  position: relative; /* This allows the positioning of Show More button */
+}
+
+/* Show More for Category Section */
+.category-container .show-more {
+  right: 20px; /* Position on the right side of the category section */
+  bottom: 10px; /* Position 10px from the bottom */
+}
+
+/* Show More for Shop, Popular, and Recent Sections */
+#shop .show-more, #popular .show-more, #recent .show-more {
+  right: 20px; /* Position it on the right side */
+  bottom: 10px; /* Position 10px from the bottom */
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .category-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    #login-form-container {
+      width: 90%; /* Make the form responsive on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #login-form-container {
+      width: 95%;
+    }
+  }  
+
+  .hero-content h2 {
+    font-size: 36px;
+  }
+
+  .navTop {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .navRight {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+    margin-top: 30px;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .menuList {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  header {
+    padding: 10px 20px;
+  }
+  
+  section {
+    padding: 30px 20px;
+  }
+}
